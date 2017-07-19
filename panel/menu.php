@@ -19,15 +19,15 @@ function menu_admin($link, $icon, $title){
 if($_SESSION['leveluser'] == "admin"){
    echo menu_admin("home.php", "home", "Beranda");
    echo menu_admin("view/view_tes.php", "edit", "Tes");
-   echo menu_admin("view/view_peserta.php", "list-alt", "Peserta");
-   echo menu_admin("view/view_edisi.php", "signal", "Edisi");
-   echo menu_admin("view/view_edisites.php", "sort-by-attributes", "Edisi Tes");
+   echo menu_admin("view/view_peserta.php", "list-alt", "Peserta (Tim)");
+   echo menu_admin("view/view_edisi.php", "signal", "Edisi Schematics");
+   echo menu_admin("view/view_edisites.php", "sort-by-attributes", "Edisi dan Tes");
 }
 
 else{ 
    echo menu_admin("home.php", "home", "Beranda");
-   echo menu_admin("view/view_ujian_operator.php", "edit", "Ujian");
-   echo menu_admin("view/view_peserta_operator.php", "list-alt", "Peserta");
+   echo menu_admin("view/view_tes_operator.php", "edit", "Tes (Operator)");
+   echo menu_admin("view/view_peserta_operator.php", "list-alt", "Peserta (Tim)");
 }
 ?>
 

@@ -1,5 +1,4 @@
 <?php
-//Fungsi untuk membuka modal dan form
 function open_form($modal_id, $action){
    echo '<div class="modal fade" id="'.$modal_id.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog modal-lg">
@@ -15,7 +14,6 @@ function open_form($modal_id, $action){
       <input type="hidden" name="id" id="id">';
 }
 
-//Fungsi untuk membuat kotak input
 function create_textbox($label, $name, $type="text", $width='5', $class="", $attr=""){
    echo'<div class="form-group">
    <label for="'.$name.'" class="col-sm-2 control-label"> '.$label.'</label>
@@ -24,7 +22,6 @@ function create_textbox($label, $name, $type="text", $width='5', $class="", $att
    </div> </div>';
 }
 
-//Fungsi untuk membuat textarea
 function create_textarea($label, $name, $class='', $attr=''){
    echo'<div class="form-group">
    <label for="'.$name.'" class="col-sm-2 control-label"> '.$label.'</label>
@@ -33,8 +30,6 @@ function create_textarea($label, $name, $class='', $attr=''){
    </div> </div>';
 }
 
-
-//Fungsi untuk membuat combobox / select box
 function create_combobox($label, $name, $list, $width='5', $class="", $attr=""){
    echo'<div class="form-group">
    <label for="'.$name.'" class="col-sm-2 control-label"> '.$label.'</label>
@@ -50,8 +45,6 @@ foreach($list as $ls){
    </div> </div>';
 }
 
-
-//Fungsi untuk membuat checkbox
 function create_checkbox($label, $name, $list){
    echo '<div class="form-group" id="'.$name.'">
    <label class="col-sm-2 control-label">'.$label.'</label>
@@ -64,7 +57,6 @@ foreach($list as $ls){
    echo '</div></div>';
 }
 
-//Fungsi untuk menutup form dan modal
 function close_form($icon="floppy-disk", $button="Simpan"){
    echo'</div>
    <div class="modal-footer">

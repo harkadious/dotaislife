@@ -1,6 +1,5 @@
 var save_method, table;
 
-//Menampilkan data dengan plugin datatables
 $(function(){
    table = $('.table').DataTable({
       "processing" : true,
@@ -18,7 +17,6 @@ function form_add(){
    $('.modal-title').text('Tambah Edisi');
 }
 	
-//Ketika tombol edit diklik
 function form_edit(id){
    save_method = "edit";
    $('#modal_edisi form')[0].reset();
@@ -40,7 +38,8 @@ function form_edit(id){
 }
 
 function save_data(){
-   if(save_method == "add") url = "ajax/ajax_edisi.php?action=insert";
+   if(save_method == "add")
+      url = "ajax/ajax_edisi.php?action=insert";
    else url = "ajax/ajax_edisi.php?action=update";
    
    $.ajax({

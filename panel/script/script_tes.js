@@ -1,6 +1,5 @@
 var save_method, table;
 
-//Menampilkan data dengan plugin datatables dan konfigurasi datepicker
 $(function(){
    table = $('.table').DataTable({
       "processing" : true,
@@ -10,14 +9,12 @@ $(function(){
       }
    });
 
-   //Konfigurasi datepicker
    $('.datepicker').datepicker({
       format: 'yyyy-mm-dd', 
       autoclose: true
    });
 });
 
-//Ketika tombol tambah diklik
 function form_add(){
    save_method = "add";
    $('#modal_tes').modal('show');
@@ -25,7 +22,6 @@ function form_add(){
    $('.modal-title').text('Tambah Tes');
 }
 	
-//Ketika tombol edit diklik
 function form_edit(id){
    save_method = "edit";
    $('#modal_tes form')[0].reset();
@@ -42,6 +38,8 @@ function form_edit(id){
          $('#tanggal').val(data.tanggal);
          $('#waktu').val(data.waktu);
          $('#jml_soal').val(data.jml_soal);
+         $('#acak_soal').val(data.acak_soal);
+         $('#acak_jawaban').val(data.acak_jawaban);
       },
       error : function(){
          alert("Tidak dapat menampilkan data!");
@@ -49,7 +47,6 @@ function form_edit(id){
    });
 }
 
-//Ketika tombol simpan diklik
 function save_data(){
    if(save_method == "add") url = "ajax/ajax_tes.php?action=insert";
    else url = "ajax/ajax_tes.php?action=update";
@@ -68,7 +65,6 @@ function save_data(){
    return false;
 }
 	
-//Ketika tombol hapus diklik
 function delete_data(id){
    if(confirm("Apakah yakin data akan dihapus?")){
       $.ajax({
